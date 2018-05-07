@@ -4,8 +4,6 @@
 <%@taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 
 <spring:url var="css" value="/resources/css" />
-<spring:url var="js" value="/resources/js" />
-<spring:url var="images" value="/resources/images" />
 
 
 <c:set var="contextRoot" value="${pageContext.request.contextPath}" />
@@ -59,52 +57,37 @@
 <body>
 	<div class="wrapper">
 		<!-- Navigation -->
-		<%@include file="./shared/navbar.jsp"%>
+		<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+	        <div class="container">
+	            <!-- Brand and toggle get grouped for better mobile display -->
+	            <div class="navbar-header">
+	                <a class="navbar-brand" href="${contextRoot}/home">Online shopping</a>
+	            </div>
+			</div>
+		</nav>
+			
 
 		<!-- Page Content -->
 		<div class="content">
-			<!-- Loading the home page -->
-			<c:if test="${userClickHome == true }">
-				<%@include file="home.jsp"%>
-			</c:if>
-			<!-- Load only when user clicks about -->
-			<c:if test="${userClickAbout == true }">
-				<%@include file="about.jsp"%>
-			</c:if>
-
-			<!-- Load only when user clicks on Products -->
-			<c:if test="${userClickAllProducts == true or userClickCategoryProducts == true}">
-				<%@include file="listProducts.jsp"%>
-			</c:if>
-
-			<!-- Load only when user clicks contact -->
-			<c:if test="${userClickContact == true }">
-				<%@include file="contact.jsp"%>
-			</c:if>
-			
-			<!-- Display the single project.jsp -->
-			<c:if test="${userClickShowProduct == true }">
-				<%@include file="singleProduct.jsp"%>
-			</c:if>
+						<div class="container">
+				<div class="row">
+					<div class="col-xs-12">
+						<div class="jumbotron">
+							<h1>${errorTitle}</h1>
+							<hr/>
+							<blockquote style="word-wrap:break-word">
+								${errorDescription}
+							</blockquote>						
+						</div>
+					</div>					
+				</div>
+			</div>
+		
 		</div>
 
 		<!-- /.container -->
 		<!-- Footer -->
 		<%@include file="./shared/footer.jsp"%>
-
-		<!-- Bootstrap core JavaScript -->
-		<script src="${js}/jquery.js"></script>
-		<script src="${js}/bootstrap.bundle.min.js"></script>
-
-		<!-- Data Table Plugin-->
-		<script src="${js}/jquery.dataTables.js"></script>
-		
-		<!-- Data Table Bootstrap Script-->
-		<script src="${js}/dataTables.bootstrap.js"></script>
-		
-		<!-- Linking myapp.js file -->
-		<script src="${js}/myapp.js"></script>
-
 	</div>
 </body>
 

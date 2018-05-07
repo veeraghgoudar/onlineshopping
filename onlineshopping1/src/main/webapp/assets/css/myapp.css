@@ -29,6 +29,7 @@ body {
 	padding-bottom: 10px;
 }
 .content{
+	padding-top: 30px;
 	padding-bottom: 60px;
 }
 
@@ -38,4 +39,9 @@ body {
 	bottom:10px;
 	height: 30px;
 }
-
+.dataTableImg {
+	
+	width:100px;
+	height: 100px;
+	
+}
